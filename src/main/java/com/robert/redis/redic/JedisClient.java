@@ -47,6 +47,9 @@ public class JedisClient {
 	 * Implemented by CAS. Minus a key by a value, then return the left value.
 	 * If the left value is less than 0, return -1; if error, return -1.
 	 * 
+	 * No synchronization, because redis client is not shared among multiple
+	 * threads.
+	 * 
 	 * @param key
 	 *            the key of the redis variable.
 	 * @param value
