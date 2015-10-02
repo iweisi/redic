@@ -32,7 +32,7 @@ public class Redic extends Jedis {
 	private ShardingStrategy shardingStategy = new HashShardingStrategy();
 
 	private boolean readWriteSeparate = false;
-	
+
 	private List<String> nodeConnStrs;
 
 	public Redic() {
@@ -42,7 +42,7 @@ public class Redic extends Jedis {
 		this.nodeConnStrs = nodeConnStrs;
 		init();
 	}
-	
+
 	public void init() {
 		for (String nodeConnStr : nodeConnStrs)
 			this.addNode(nodeConnStr);

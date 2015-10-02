@@ -5,10 +5,10 @@ import java.util.List;
 
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
+import redis.clients.jedis.JedisPool;
+
 import com.robert.redis.redic.strategy.RoundRobinSelectStrategy;
 import com.robert.redis.redic.strategy.SelectStrategy;
-
-import redis.clients.jedis.JedisPool;
 
 public class RedicNode {
 	public static final String NODE_SEPARATOR = ",";
