@@ -32,8 +32,18 @@ public class Redic extends Jedis {
 	private ShardingStrategy shardingStategy = new HashShardingStrategy();
 
 	private boolean readWriteSeparate = false;
+	
+	private List<String> nodeConnStrs;
+
+	public Redic() {
+	}
 
 	public Redic(List<String> nodeConnStrs) {
+		this.nodeConnStrs = nodeConnStrs;
+		init();
+	}
+	
+	public void init() {
 		for (String nodeConnStr : nodeConnStrs)
 			this.addNode(nodeConnStr);
 	}
@@ -1870,5 +1880,29 @@ public class Redic extends Jedis {
 
 		// The program never comes here.
 		return -1;
+	}
+
+	public List<RedicNode> getRedicNodes() {
+		return redicNodes;
+	}
+
+	public void setRedicNodes(List<RedicNode> redicNodes) {
+		this.redicNodes = redicNodes;
+	}
+
+	public boolean isReadWriteSeparate() {
+		return readWriteSeparate;
+	}
+
+	public void setReadWriteSeparate(boolean readWriteSeparate) {
+		this.readWriteSeparate = readWriteSeparate;
+	}
+
+	public List<String> getNodeConnStrs() {
+		return nodeConnStrs;
+	}
+
+	public void setNodeConnStrs(List<String> nodeConnStrs) {
+		this.nodeConnStrs = nodeConnStrs;
 	}
 }
