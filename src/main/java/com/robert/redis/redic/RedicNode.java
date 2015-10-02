@@ -13,7 +13,7 @@ import com.robert.redis.redic.strategy.SelectStrategy;
 public class RedicNode {
 	public static final String NODE_SEPARATOR = ",";
 
-	public static final String HOST_PORT_SEPARATOR = ",";
+	public static final String HOST_PORT_SEPARATOR = ":";
 
 	private JedisPool master;
 	private List<JedisPool> slaves;
