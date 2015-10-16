@@ -68,3 +68,4 @@ redic.cache.node.conn2=ip:6379,ip:6380
 
 1. 提供一种方式使用annotation来声明Redic，把连接节点，读写分离等属性放在annotation中声明，不用再使用spring环境。
 2. 提供手工的失效转移，可提供后台控制台来提升某个从redis作为主。
+3. 当前使用默认的对象池配置，需要进行压测以及调整。
