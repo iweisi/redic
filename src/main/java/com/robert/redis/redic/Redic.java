@@ -58,6 +58,8 @@ public class Redic extends Jedis {
 	public void init() {
 		for (String nodeConnStr : nodeConnStrs)
 			this.addNode(nodeConnStr);
+		
+		log.info("There are {} nodes.", redicNodes.size());
 	}
 
 	public Redic addNode(String nodeConnStr) {
