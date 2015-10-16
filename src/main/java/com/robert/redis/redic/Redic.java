@@ -7,6 +7,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
+
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
 import redis.clients.jedis.BitOP;
 import redis.clients.jedis.BitPosParams;
@@ -27,6 +31,8 @@ import com.robert.redis.redic.strategy.HashShardingStrategy;
 import com.robert.redis.redic.strategy.ShardingStrategy;
 
 public class Redic extends Jedis {
+	protected final Logger log = LoggerFactory.getLogger(Redic.class);
+
 	private List<RedicNode> redicNodes = new ArrayList<RedicNode>();
 
 	private ShardingStrategy shardingStategy = new HashShardingStrategy();
@@ -39,6 +45,12 @@ public class Redic extends Jedis {
 	}
 
 	public Redic(List<String> nodeConnStrs) {
+		if (StringUtils.isEmpty(nodeConnStrs)) {
+			log.error("The nodeConnStrs {} for Redic is invalid.", nodeConnStrs);
+			throw new IllegalArgumentException(
+					"The nodeConnStrs for Redic is invalid.");
+		}
+
 		this.nodeConnStrs = nodeConnStrs;
 		init();
 	}
