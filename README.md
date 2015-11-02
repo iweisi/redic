@@ -70,3 +70,4 @@ redic.cache.node.conn2=ip:6379,ip:6380
 2. 提供手工的失效转移，可提供后台控制台来提升某个从redis作为主。
 3. 当前使用默认的对象池配置，需要进行压测以及调整。
 4. 如果使用代理服务器，可以参考codis，codis类似mysql的cobar，中间多一层代理
+5. 当前支持的时key-hash，节点有主从备，也可以考虑一致性hash，使用SharedPool来实现
