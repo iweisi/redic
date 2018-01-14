@@ -11,8 +11,10 @@ public class RedicTest extends AbstractTestNGSpringContextTests {
 	public void testRedic() {
 		Redic redic = (Redic) applicationContext.getBean("redic");
 
-		redic.set("name", "value");
+		redic.set("name", "robert");
 
-		AssertJUnit.assertEquals("value", redic.get("name"));
+		AssertJUnit.assertEquals("robert", redic.get("name"));
+
+		System.out.println("Get value: " + redic.get("name"));
 	}
 }
