@@ -2,7 +2,7 @@
 
 ## Redic是什么？
 
-一个简单易用的Redis缓存客户端，与Spring无缝结合，简单导入Spring环境或者配置Redic Bean即可使用，并且支持读写分离和分片。
+Redic是一个简单易用的Redis缓存客户端，与Spring无缝结合，简单导入Spring环境或者配置Redic Bean即可使用，并且支持读写分离和分片。
 
 ## 如何使用Redic？
 
