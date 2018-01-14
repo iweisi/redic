@@ -72,13 +72,11 @@ Redic是一个简单易用的Redis缓存客户端，与Spring无缝结合，简�
 
 ### 2. 使用
 
-    ```java
-            Redic redic = (Redic) applicationContext.getBean("redic");
-    
-            redic.set("name", "value");
-    
-            AssertJUnit.assertEquals("value", redic.get("name"));
-    ```
+```java
+Redic redic = (Redic) applicationContext.getBean("redic");   
+redic.set("name", "robert");
+AssertJUnit.assertEquals("robert", redic.get("name"));
+```
 
 ## 联系开发者艳鹏
 
